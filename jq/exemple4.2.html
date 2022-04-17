@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+<title>Hello World avec jQuery</title>
+<meta charset="iso-8859-1" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="jquery.js"></script>
+<script src="exemple4.3.js"></script>
+</head>
+<body>
+<div id="titre">J'aime les frites.</div>
+<p> C’est un exemple qui permet de tester quelque commande de jQuery directement sur un même
+document, d’une manière séquentielle. Le script à exécuter doit être insérer après la déclaration du
+HTML. </p>
+<script >
+    alert($('#titre').html()); // la méthode html() permet d'accéder au contenu des éléments elle affichealors "J'aime les frites."
+    $('#titre').html('Je mange une pomme');
+    // Remplace le contenu ("J'aime les frites.") par "Je mange une pomme".
+    // Deux autres méthodes, before() et after() permettent d'ajouter du contenu ou un élément de la page
+    // Ajoute "Voici le titre :" avant la balise ayant comme id "titre".
+    $('#titre').before('Voici le titre :');
+    // Ajoute "! Wahou !" après la balise ayant comme id "titre".
+    $('#titre').after('! Wahou !');
+    // Il faut savoir qu'on peut chaîner les méthodes
+    $('#titre') .before( ' avant: ')
+    .after('! après !');
+    </script >
+</body>
+</html>

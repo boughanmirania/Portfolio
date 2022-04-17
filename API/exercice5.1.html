@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./exercice51.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="./jquery-2.1.4,min.js"></script>
+    <title>Exercice5</title>
+
+</head>
+<center>
+    <h1>Contact</h1>
+
+    <body>
+        
+        <form id="frm" name="frm" method="post" action="./action.html" onsubmit="calculNombre()">
+            <label for="fname">First name(*):</label>
+            <input type="text" required oninput="sessionStorage.setItem('username', this.value);"
+                name=" Name" type="text" id="fname" placeholder="First name" required> <br>
+            <label for="lname">Last name(*):</label>
+            <input type="text" id="lname" placeholder="Last Name" required><br>
+            <label for="phonenum">You want to be contacted by</label>
+            <select name="pets" id="pet-select">
+                <option value="">Please choose an option</option>
+                <option value="tel">phone number</option>
+                <option value="email">email</option>
+                <option value="fax">fax</option>
+            </select> <br>
+            <label for="When">When</label>
+            <input type="date" name="date" id="date"><br>
+            <label for="Between">Between</label>
+            <input type="time" name="" id="" value="07:00" min="07:00" required>and <input type="time" name="" id=""
+                max="19:00"><br>
+            <label for="phonenum">Phone Number(*):</label>
+            <input type="tel" name="phonenum" id="phonenum" required placeholder="phone number" pattern="[0-9]{8}"><br>
+            <button type="submit" value="Submit" name="Submit">Submit</button>
+            <button type="reset" value="reset" name="Cancel">Cancel</button><br>
+
+        </form>
+       <!-- <input type="range" Min="0" Max="100" step="20">-->
+
+    </body>
+</center>
+
+</html>

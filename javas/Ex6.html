@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>FORMATION</title>
+
+    <script>
+        function Verif(frm) {
+            if (frm.nom.value == "") {
+                alert("saisir votre nom et prénom!");
+                return false;
+            }
+            if (frm.cin.value == "") {
+                alert("saisir votre CIN!");
+                return false;
+            }
+            var x = 1;
+            var n = frm.cin.value.length;
+            for (i = 0; i < n; ++i) {
+                if (frm.cin.value.charAt(i) < "0" || frm.cin.value.charAt(i) > "9" || n != 8) {
+                    x = -1;
+                }
+            }
+
+            if (x == -1) {
+                alert("CIN est invalide!");
+                return false;
+            }
+            if (frm.email.value == "") {
+                alert("saisir votre adresse e-mail!");
+                return false;
+            }
+            if (frm.email.value.indexOf('@') == -1) {
+                alert("Adresse e-mail invalide!");
+                return false;
+            }
+            taille = frm.list.options.length;
+            var n = 0;
+            for (i = 0; i < taille; i++) {
+                if (frm.list[i].selected) {
+                    n += 1
+                }
+            }
+            if (n == 0) {
+                alert("module de formation vide!");
+                return false;
+            }
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: #FFACC8;
+        }
+    </style>
+    <center>
+        <h1><u>INSCRIPTION</u></h1>
+    </center><br>
+    <form>
+
+        Nom et Prénom * : <input type="text" name="nom"> <br><br>
+        CIN * : <input type="number" name="cin"><br><br>
+        Adresse e-mail * : <input type="email" name="email"> <br><br>
+        Niveau :
+        <input type="radio" checked value="1"> Secondaire <input type="radio" value="2"> Universitaire <input
+            type="radio" value="3"> Autre<br><br>
+        Modules de formation :<br>
+        <SELECT name="list">
+            <OPTION VALUE="Bureautique" >Bureautique</OPTION>
+            <OPTION VALUE="SE et Réseaux info.">SE et Réseaux info.</OPTION>
+            <OPTION VALUE="TIC">TIC</OPTION>
+        </SELECT><br><br>
+        (*) Champs obligatoires
+        <input type="submit" value="Envoyer" onclick="Verif(this.form)">
+        <input type="reset" value="Annuler">
+
+    </form>
+</body>
+
+</html>
